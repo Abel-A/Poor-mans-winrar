@@ -1,5 +1,6 @@
 
 This program compresses and decompresses files of any size. To run program, clone repo from github. In the folder type the commands.
+
     "make all" - produces both encode and decode
     "make decode" - produces decode
         -uncompresses a file
@@ -9,6 +10,7 @@ This program compresses and decompresses files of any size. To run program, clon
         -checks for memory leaks / other bugs.
 
 After running make type ./ + "filename" to run the program. Each program has the following optional arguements:
+
     -v:
         which prints file stats.
     -i:
@@ -18,8 +20,8 @@ After running make type ./ + "filename" to run the program. Each program has the
 
 
 Bugs:
-    Infer: resource acquired by call to `open() issues.
-        Issue: I used open inside getopt() to parce arguements. It's possible for a resource leakage since you may end up exiting the program early upon receiving an invalid argument.
+
+Issue: I used open inside getopt() to parce arguements. It's possible for a resource leakage since you may end up exiting the program early upon receiving an invalid argument.
         
-        Fix:  save the paths to any specified input and output files during the getopt() loop, then open the files outside the loop.
+Fix:  save the paths to any specified input and output files during the getopt() loop, then open the files outside the loop.
     
